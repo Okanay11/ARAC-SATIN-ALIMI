@@ -5,8 +5,10 @@ namespace Mercedes_Araç_Satın_Alımı
     class Program
     {
 
-
-
+        //public class Marka
+        //{
+        //    public String markaIsmi { get; set; }
+        //}
         public enum KrediCekicem { kredicekilecek = 1, kredicekilmeyecek = 2 }
         public class Firma
         {
@@ -45,6 +47,7 @@ namespace Mercedes_Araç_Satın_Alımı
 
 
 
+            // Diziyi Listeyede çevirebilirim.
 
             public override void Bastir(string[] dizi, int[] dizi2)
             {
@@ -113,228 +116,215 @@ namespace Mercedes_Araç_Satın_Alımı
         public const string GLB = "12";
         static void Main(string[] args)
         {
-            bool cikis = false; // çıkış işlemi kapalı
-            while (cikis != true)
+
+            //List<Araba> arabaListe = new List<Araba>();
+            //Program program = new Program();
+            //String i;
+            //do
+            //{
+            //    Console.WriteLine("İşlemler: 1-) Araba Ekle 2-) Ürün Listele  : (Çıkmak için -1 değerini giriniz)");
+            //    i = Console.ReadLine();              
+            //    switch (i)
+            //    {
+            //        case "1":
+            //            program.ArabeEkle(arabaListe);
+            //            break;
+            //        case "2":
+            //            break;
+            //        default:
+            //            break;
+            //    }
+
+            //} while (i != "-1");
+            Firma mercedesFirması = new Firma();
+            Mercedes_Arac_versiyonları test = new Mercedes_Arac_versiyonları();
+            mercedesFirması.AractamIsmı = "MERCEDES";
+            Console.WriteLine(mercedesFirması.FirmaIsmiPublic);
+            Random rnd = new Random();
+
+
+            int ss = 0;
+            int tüm_fiyat = 0;
+
+            int index = 0;
+            int fiyat = 0;
+            String i;
+            do
             {
-
-                
-                    Console.WriteLine("İsim Soyisim Giriniz:");
-                    string isim = Console.ReadLine();
-
-                    Firma mercedesFirması = new Firma();
-                    Mercedes_Arac_versiyonları test = new Mercedes_Arac_versiyonları();
-                    mercedesFirması.AractamIsmı = "MERCEDES";
-                    Console.WriteLine(mercedesFirması.FirmaIsmiPublic);
-                    Random rnd = new Random();
-
-
-                    int ss = 0;
-                    int tüm_fiyat = 0;
-
-                    int index = 0;
-                    int fiyat = 0;
-                    String i;
-            
-                    do
-                    {
-                        Console.WriteLine("0-) Çıkış 1-) A Serisi 2-) CLA 3-) S_Serisi_Maybach 4-) GLC_Coupe 5-) Sprinter Servis 6-) A_Serisi 7-) Vito_Tourer 8-) C_Serisi_Coupe 9-) G_serisi 10-) B_Serisi 11-) Sprinter_Panelvan 12-)GLB 13-)Sizin için önerilen araç");
-                        i = Console.ReadLine();
-                 
-                    {
-                        switch (i)
-                        {
-                            case A_Serisi_Sedan:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.A_Serisi_Sedan, aracversiyonları_fiyatı.A_Serisi_Sedan);
-                                Console.WriteLine("0 dan 1'e kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.A_Serisi_Sedan[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.A_Serisi_Sedan[index];
-                                break;
-                            case CLA:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.CLA, aracversiyonları_fiyatı.CLA);
-                                Console.WriteLine("0 dan 2'e kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.CLA[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.CLA[index];
-                                break;
-                            case S_Serisi_Maybach:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.S_Serisi_Maybach, aracversiyonları_fiyatı.S_Serisi_Maybach);
-                                Console.WriteLine(String.Concat("0 dan 0'a kadar değer giriniz: "));
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.S_Serisi_Maybach[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.GLC_Coupe[index];
-                                break;
-                            case GLC_Coupe:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.GLC_Coupe, aracversiyonları_fiyatı.GLC_Coupe);
-                                Console.WriteLine("0 dan 0'a kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.GLC_Coupe[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.GLC_Coupe[index];
-                                break;
-                            case Sprinter_Servis:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.Sprinter_Servis, aracversiyonları_fiyatı.Sprinter_Servis);
-                                Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.Sprinter_Servis[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.Sprinter_Servis[index];
-                                break;
-                            case A_Serisi:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.A_Serisi, aracversiyonları_fiyatı.A_Serisi);
-                                Console.WriteLine("0 dan 1'e kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                Console.WriteLine(String.Concat(Mercedes_Arac_versiyonları.A_Serisi[index]));
-                                fiyat = aracversiyonları_fiyatı.Vito_Tourer[index];
-                                break;
-                            case Vito_Tourer:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.Vito_Tourer, aracversiyonları_fiyatı.Vito_Tourer);
-                                Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.Vito_Tourer[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.Vito_Tourer[index];
-                                break;
-                            case C_Serisi_Coupe:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.C_Serisi_Coupe, aracversiyonları_fiyatı.C_Serisi_Coupe);
-                                Console.WriteLine("0 dan 0'a kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.C_Serisi_Coupe[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.C_Serisi_Coupe[index];
-                                break;
-                            case G_serisi:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.G_serisi, aracversiyonları_fiyatı.G_serisi);
-                                index = Mercedes_Arac_versiyonları.G_serisi.Length;
-                                Console.WriteLine("0 dan 1'e kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.G_serisi[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.G_serisi[index];
-                                break;
-                            case B_Serisi:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.B_Serisi, aracversiyonları_fiyatı.B_Serisi);
-                                Console.WriteLine("0 dan 0'a kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.B_Serisi[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.B_Serisi[index];
-                                break;
-                            case Sprinter_Panelvan:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.Sprinter_Panelvan, aracversiyonları_fiyatı.Sprinter_Panelvan);
-                                Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.Sprinter_Panelvan[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.Sprinter_Panelvan[index];
-                                break;
-                            case GLB:
-                                Console.WriteLine("Araç versiyonları ve Fiyatları: ");
-                                test.Bastir(Mercedes_Arac_versiyonları.GLB, aracversiyonları_fiyatı.GLB);
-                                Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
-                                index = Convert.ToInt32(Console.ReadLine());
-                                mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.GLB[index];
-                                Console.WriteLine(mercedesFirması.AractamIsmı);
-                                fiyat = aracversiyonları_fiyatı.GLB[index];
-                                break;
-                            case "13":
-                                ss = rnd.Next(0, Tüm_aracların_versiyonları.hepsi.Length);
-                                Console.WriteLine(Tüm_aracların_versiyonları.hepsi[ss]);
-                                fiyat = Tüm_aracların_fiyatı.hepsi[ss];
-                                break;
-                            default:
-                                break;
-                        }
-                        if (i != "0")
-                        {
-                            Console.WriteLine("---------------------------------------------------"); Console.WriteLine();
-                            Console.WriteLine("Yeni bir araç seçmek istemiyorsanız 0'a basınız!!!");
-                            Console.WriteLine("---------------------------------------------------"); Console.WriteLine();
-                        }
-                    }
-                    } while (i != "0");
-                    if (i == "0" && fiyat == 0)
-                    {
-                        return;
-                    }
-                    int a = aracversiyonları_fiyatı.GLB[index];
-
-                    Console.WriteLine(" Mevcut bak" +
-                        "iyenizi giriniz: ");
-                    int bakiye = Convert.ToInt32(Console.ReadLine());
-                    Console.WriteLine("Mevcut bakiyeniz: " + bakiye);
-                    Console.WriteLine("Aracın fiyatı: " + fiyat);
-                    Console.WriteLine("Son durumda kalan mevcut bakiye: " + (bakiye - fiyat));
-
-
-
-
-
-                    string[] araba_markası = { " MERCEDES " + " BMW " + " AUDI " + " PEUGEOT " + " OPEL " + " DACIA " + " FORD " + "CITROEN" };
-
-
-
-
-
-                    if (bakiye - fiyat < 0)
-                    {
-                        Console.WriteLine("Bakiyeniz Yetersiz");
-                        Console.WriteLine("Kredi çekmek istiyorsanız 1'e basınız , Çıkış yapmak istiyorsanız 2'ye basınız");
-                        int klavye = Convert.ToInt32(Console.ReadLine());
-                        if (klavye == Convert.ToInt32(KrediCekicem.kredicekilecek))
-                        {
-                            Console.WriteLine("Kredi işlemleriniz başlatılmıştır");
-                        Console.WriteLine("İyi Günler, " + isim + "!");
-                    }
-                        else
-                        {
-                            Console.WriteLine("Talebiniz doğrultusunda işleme devam edilmemektedir");
-                            Console.WriteLine("İyi Günler, " + isim + "!");
-                    }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Bakiyeniz Yeterli");
-                    Console.WriteLine("Satın alımınız için teşekkürler, " + isim + "!");
-                        Console.Write("\n\nÇıkmak istiyormusunuz (E/H)");
-                        char cikmak = Convert.ToChar(Console.ReadLine());
-                        if (cikmak == 'e' || cikmak == 'E')
-                        {
-                            cikis = true; return;
-                        }
-                        else
-                        {
-                            cikis = false;
-
-
-                        }
-
-
-
-                        Console.ReadKey();
-                    }
+                Console.WriteLine("0-) Çıkış 1-) A Serisi 2-) CLA 3-) S_Serisi_Maybach 4-) GLC_Coupe 5-) Sprinter Servis 6-) A_Serisi 7-) Vito_Tourer 8-) C_Serisi_Coupe 9-) G_serisi 10-) B_Serisi 11-) Sprinter_Panelvan 12-)GLB 13-)Sizin için önerilen araç");
+                i = Console.ReadLine();
+                switch (i)
+                {
+                    case A_Serisi_Sedan:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.A_Serisi_Sedan, aracversiyonları_fiyatı.A_Serisi_Sedan);
+                        Console.WriteLine("0 dan 1'e kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.A_Serisi_Sedan[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.A_Serisi_Sedan[index];
+                        break;
+                    case CLA:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.CLA, aracversiyonları_fiyatı.CLA);
+                        Console.WriteLine("0 dan 2'e kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.CLA[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.CLA[index];
+                        break;
+                    case S_Serisi_Maybach:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.S_Serisi_Maybach, aracversiyonları_fiyatı.S_Serisi_Maybach);
+                        Console.WriteLine(String.Concat("0 dan 0'a kadar değer giriniz: "));
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.S_Serisi_Maybach[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.GLC_Coupe[index];
+                        break;
+                    case GLC_Coupe:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.GLC_Coupe, aracversiyonları_fiyatı.GLC_Coupe);
+                        Console.WriteLine("0 dan 0'a kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.GLC_Coupe[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.GLC_Coupe[index];
+                        break;
+                    case Sprinter_Servis:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.Sprinter_Servis, aracversiyonları_fiyatı.Sprinter_Servis);
+                        Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.Sprinter_Servis[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.Sprinter_Servis[index];
+                        break;
+                    case A_Serisi:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.A_Serisi, aracversiyonları_fiyatı.A_Serisi);
+                        Console.WriteLine("0 dan 1'e kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(String.Concat(Mercedes_Arac_versiyonları.A_Serisi[index]));
+                        fiyat = aracversiyonları_fiyatı.Vito_Tourer[index];
+                        break;
+                    case Vito_Tourer:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.Vito_Tourer, aracversiyonları_fiyatı.Vito_Tourer);
+                        Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.Vito_Tourer[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.Vito_Tourer[index];
+                        break;
+                    case C_Serisi_Coupe:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.C_Serisi_Coupe, aracversiyonları_fiyatı.C_Serisi_Coupe);
+                        Console.WriteLine("0 dan 0'a kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.C_Serisi_Coupe[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.C_Serisi_Coupe[index];
+                        break;
+                    case G_serisi:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.G_serisi, aracversiyonları_fiyatı.G_serisi);
+                        index = Mercedes_Arac_versiyonları.G_serisi.Length;
+                        Console.WriteLine("0 dan 1'e kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.G_serisi[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.G_serisi[index];
+                        break;
+                    case B_Serisi:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.B_Serisi, aracversiyonları_fiyatı.B_Serisi);
+                        Console.WriteLine("0 dan 0'a kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.B_Serisi[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.B_Serisi[index];
+                        break;
+                    case Sprinter_Panelvan:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.Sprinter_Panelvan, aracversiyonları_fiyatı.Sprinter_Panelvan);
+                        Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.Sprinter_Panelvan[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.Sprinter_Panelvan[index];
+                        break;
+                    case GLB:
+                        Console.WriteLine("Modeller ve Fiyatları: ");
+                        test.Bastir(Mercedes_Arac_versiyonları.GLB, aracversiyonları_fiyatı.GLB);
+                        Console.WriteLine("0 dan 2'ye kadar değer giriniz: ");
+                        index = Convert.ToInt32(Console.ReadLine());
+                        mercedesFirması.ModelIsmi = Mercedes_Arac_versiyonları.GLB[index];
+                        Console.WriteLine(mercedesFirması.AractamIsmı);
+                        fiyat = aracversiyonları_fiyatı.GLB[index];
+                        break;
+                    case "13":
+                        ss = rnd.Next(0, Tüm_aracların_versiyonları.hepsi.Length);
+                        Console.WriteLine(Tüm_aracların_versiyonları.hepsi[ss]);
+                        fiyat = Tüm_aracların_fiyatı.hepsi[ss];
+                        break;
+                    default:
+                        break;
                 }
-        
-
+                if (i != "0")
+                {
+                    Console.WriteLine("---------------------------------------------------"); Console.WriteLine();
+                    Console.WriteLine("Yeni bir araç seçmek istemiyorsanız 0'a basınız!!!");
+                    Console.WriteLine("---------------------------------------------------"); Console.WriteLine();
                 }
+            } while (i != "0");
+            if (i == "0" && fiyat == 0)
+            {
+                return;
+            }
+            int a = aracversiyonları_fiyatı.GLB[index];
+
+            Console.WriteLine(" Mevcut bak" +
+                "iyenizi giriniz: ");
+            int bakiye = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Mevcut bakiyeniz: " + bakiye);
+            Console.WriteLine("Aracın fiyatı: " + fiyat);
+            Console.WriteLine("Son durumda kalan mevcut bakiye: " + (bakiye - fiyat));
 
 
+
+            //aracversiyonları_fiyatı();
+            //  bakiye - aracversiyonları_fiyatı;
+
+
+
+            string[] araba_markası = { " MERCEDES " + " BMW " + " AUDI " + " PEUGEOT " + " OPEL " + " DACIA " + " FORD " + "CITROEN" };
+
+
+            //int yabancı_araba = Convert.ToInt16(Console.ReadLine());
+
+
+            if (bakiye - fiyat < 0)
+            {
+                Console.WriteLine("Bakiyeniz Yetersiz");
+                Console.WriteLine("Kredi çekmek istiyorsanız 1'e basınız , Çıkış yapmak istiyorsanız 2'ye basınız");
+                int klavye = Convert.ToInt32(Console.ReadLine());
+                if (klavye == Convert.ToInt32(KrediCekicem.kredicekilecek))
+                {
+                    Console.WriteLine("Kredi işlemleriniz başlatılmıştır. Satın alma işleminiz gerçekleştirilmiştir.");
+                }
+                else
+                {
+                    Console.WriteLine("Talebiniz doğrultusunda işleme devam edilmemektedir");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Bakiyeniz Yeterli, Satın alma gerçekleştirilmiştir.");
             }
 
+            Console.ReadKey();
 
         }
-
+    }
+}
