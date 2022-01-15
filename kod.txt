@@ -149,6 +149,8 @@ namespace Mercedes_Araç_Satın_Alımı
             int index = 0;
             int fiyat = 0;
             String i;
+            Console.WriteLine("İsim ve Soyisim Giriniz: ");
+            string isim = Console.ReadLine();
             do
             {
                 Console.WriteLine("0-) Çıkış 1-) A Serisi 2-) CLA 3-) S_Serisi_Maybach 4-) GLC_Coupe 5-) Sprinter Servis 6-) A_Serisi 7-) Vito_Tourer 8-) C_Serisi_Coupe 9-) G_serisi 10-) B_Serisi 11-) Sprinter_Panelvan 12-)GLB 13-)Sizin için önerilen araç");
@@ -311,16 +313,16 @@ namespace Mercedes_Araç_Satın_Alımı
                 int klavye = Convert.ToInt32(Console.ReadLine());
                 if (klavye == Convert.ToInt32(KrediCekicem.kredicekilecek))
                 {
-                    Console.WriteLine("Kredi işlemleriniz başlatılmıştır. Satın alma işleminiz gerçekleştirilmiştir.");
+                    Console.WriteLine("Kredi işlemleriniz başlatılmıştır. Satın alma işleminiz gerçekleştirilmiştir. İyi Günler " + isim);
                 }
                 else
                 {
-                    Console.WriteLine("Talebiniz doğrultusunda işleme devam edilmemektedir");
+                    Console.WriteLine("Talebiniz doğrultusunda işleme devam edilmemektedir. İyi Günler " + isim);
                 }
             }
             else
             {
-                Console.WriteLine("Bakiyeniz Yeterli, Satın alma gerçekleştirilmiştir.");
+                Console.WriteLine("Bakiyeniz Yeterli, Satın alma gerçekleştirilmiştir. İyi Günler " + isim);
             }
 
             Console.ReadKey();
